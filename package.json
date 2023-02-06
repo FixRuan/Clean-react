@@ -3,12 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint 'src/**' --fix"
+    ]
+  },
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node": "^18.11.19",
