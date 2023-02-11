@@ -7,17 +7,22 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn test -- --watch",
+    "test:staged": "yarn test -- --findRelatedTests",
+    "test:ci": "yarn test -- --coverage",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci"
     }
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "eslint 'src/**' --fix"
+      "eslint 'src/**' --fix",
+      "yarn test:staged"
     ]
   },
   "devDependencies": {
