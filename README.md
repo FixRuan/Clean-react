@@ -2,7 +2,7 @@
 
 <br />
 
-- [x] Should call HttpPostClient with correct url
+- [x] Should authentication calls http-post-client with correct url
 - [ ] ...
 
 <br />
