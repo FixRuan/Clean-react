@@ -38,5 +38,9 @@
     "lint-staged": "^13.1.0",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/faker": "^6.6.9",
+    "faker": "^6.6.6"
   }
 }
